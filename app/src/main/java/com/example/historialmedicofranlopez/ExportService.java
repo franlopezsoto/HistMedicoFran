@@ -34,6 +34,7 @@ public class ExportService {
             return reportFile;
         } catch (IOException e) {
             e.printStackTrace();
+            Toast.makeText(context, "Error al generar el informe", Toast.LENGTH_SHORT).show();
             return null;
         }
     }
