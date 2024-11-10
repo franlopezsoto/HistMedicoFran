@@ -6,11 +6,11 @@ plugins {
 
 android {
     namespace = "com.example.historialmedicofranlopez"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.historialmedicofranlopez"
-        minSdk = 21  // Reducido para compatibilidad, si es posible.
+        minSdk = 23  // Aumentado para cumplir con la dependencia de Firebase
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -39,7 +39,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"  // Asegúrate de que coincida con la versión de Compose utilizada.
+        kotlinCompilerExtensionVersion = "1.5.1"
     }
     packaging {
         resources {
@@ -63,8 +63,8 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.recyclerview)
 
-    // Procesador de anotaciones para Room
-    kapt(libs.androidx.room.compiler)
+    // Procesador de anotaciones para Room sin kapt
+    annotationProcessor(libs.androidx.room.compiler)
 
     // Testing
     testImplementation(libs.junit)
