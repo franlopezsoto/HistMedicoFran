@@ -1,13 +1,16 @@
 package com.example.historialmedicofranlopez;
 
-import androidx.room.Room;
+import android.app.Application;
+import java.util.List;
 
 public class MedicalRecordRepository {
+    private final AppDatabase database;
     private final MedicalRecordDao recordDao;
 
     public MedicalRecordRepository(Application application) {
-        MedicalDatabase db = Room.databaseBuilder(application, MedicalDatabase.class, "medical_db").build();
-        recordDao = db.medicalRecordDao();
+        // Inicializa la base de datos Room
+        database = AppDatabase.getInstance(application);
+        recordDao = database.medicalRecordDao();  // Asegúrate de que el método para obtener el DAO esté implementado en AppDatabase
     }
 
     public void insert(MedicalRecord record) {

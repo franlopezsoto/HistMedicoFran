@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.historialmedicofranlopez"
-        minSdk = 23  // Aumentado para cumplir con la dependencia de Firebase
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.firebase.vertexai)
 
     // Procesador de anotaciones para Room sin kapt
     annotationProcessor(libs.androidx.room.compiler)

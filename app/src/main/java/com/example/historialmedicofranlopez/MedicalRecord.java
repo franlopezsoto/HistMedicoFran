@@ -1,10 +1,12 @@
 package com.example.historialmedicofranlopez;
 
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "medical_records")
 public class MedicalRecord {
-    private int id;
+    @PrimaryKey(autoGenerate = true)
+    private int id;  // Clave primaria auto-generada
     private String condition;
     private String treatment;
     private long date;
@@ -42,3 +44,4 @@ public class MedicalRecord {
         this.date = date;
     }
 }
+
